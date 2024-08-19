@@ -1,0 +1,30 @@
+#-*- encoding:utf-8 -*-
+
+# 错误码
+
+
+# 通用错误[1-100]
+
+
+# 注册错误[101-200]
+EC_REGISTER_PHONENUM_TYPE_ERROR = 101
+ER_REGISTER_PHONENUM_TYPE_ERROR = "手机号格式错误，请重新输入"
+
+
+EC_REGISTER_USERID_REPEAT = 102
+ER_REGISTER_USERID_REPEAT = "该用户名已被注册，请重新输入"
+
+EC_REGISTER_IDCARD_ERROR = 103
+ER_REGISTER_IDCARD_ERROR = "身份证号有误，请重新输入"
+
+EC_REGISTER_PWD_TYPE_ERROR = 104
+ER_REGISTER_PWD_TYPE_ERROR = "密码格式有误，请输入8-16位密码（字母、数字、特殊字符：?=.*+!@）"
+
+# 登录错误[201-300]
+EC_LOGIN_USERID_ERROR = 201
+ER_LOGIN_USERID_ERROR = "账号不存在，请重新输入"
+
+EC_LOGIN_PASSWORD_ERROR = 202
+ER_LOGIN_PASSWORD_ERROR = "密码错误，请重新输入"
+
+
