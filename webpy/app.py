@@ -4,6 +4,8 @@ import Account
 import ErrorCfg
 import Error
 import json
+import logging
+import logging.config
 
 urls = (
     '/','hello',
@@ -14,6 +16,21 @@ urls = (
 app = web.application(urls,globals())
 application = app.wsgifunc()
 
+# 获取日志库配置
+logging.config.fileConfig('logging.conf')
+# 获取记录器
+logger = logging.getLogger('applog')
+
+
+# 装饰器--异常捕获
+def CatchError(func):
+    def wrapper(*args,**kwargs):
+        try:
+            return func(*args,**kwargs)
+        except Exception as e:
+            # 打印详细的报错信息，使用error方法，报错信息更简单
+            logger.exception(e)
+    return wrapper
 
 class hello:
     def GET(self,name):
@@ -22,6 +39,7 @@ class hello:
         return 'Hello' + name
 
 class Register:
+    @CatchError
     def POST(self):
         req = web.input(password = '', phoneNum = '', nick = '', sex = '', idCard = '')
         password = req.password
@@ -48,6 +66,7 @@ class Register:
         return json.dumps({'code':111,'reason':'register OK'})
 
 class Login:
+    @CatchError
     def POST(self):
         req = web.input(userId = '', password = '')
         userId = req.userId
@@ -58,7 +77,7 @@ class Login:
         if result['code'] != 0:
             return Error.ErrResult(result['code'],result['reason'])
         # 登录成功，进行下一步处理
-
+        result = Account.HandleLogin(userId)
         return json.dumps({'code':0})
 
 

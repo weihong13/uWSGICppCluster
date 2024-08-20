@@ -1,0 +1,28 @@
+2024-08-20 18:51:41|ERROR|app.py:31|'cod'
+Traceback (most recent call last):
+  File "app.py", line 29, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 76, in POST
+    if result['cod'] != 0:
+KeyError: 'cod'
+2024-08-20 18:54:44|ERROR|app.py:31|'cod'
+Traceback (most recent call last):
+  File "app.py", line 29, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 76, in POST
+    if result['cod'] != 0:
+KeyError: 'cod'
+2024-08-20 18:57:33|ERROR|app.py:31|'cod'
+Traceback (most recent call last):
+  File "app.py", line 29, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 76, in POST
+    if result['cod'] != 0:
+KeyError: 'cod'
+2024-08-20 19:05:03|ERROR|app.py:31|'cod'
+Traceback (most recent call last):
+  File "app.py", line 29, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 76, in POST
+    if result['cod'] != 0:
+KeyError: 'cod'

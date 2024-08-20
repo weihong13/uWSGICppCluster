@@ -19,3 +19,12 @@ def InsertRegisterUser(phoneNum, password, nick, sex, idCard,now):
         createtime = now,
         lastlogintime = now,
     )
+
+# 更新用户的最后登录时间
+def UpdateLastLoginTime(userId,now):
+    Config.gdb.update(
+        "user",
+        lastlogintime = now,
+        where = "userid=$userid",
+        vars = dict(userid=userId)
+    )

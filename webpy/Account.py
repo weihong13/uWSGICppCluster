@@ -82,14 +82,14 @@ def CheckIdCard(idCard):
             return False
     else:
         return False
-
-# 检测密码格式
-def CheckPassword(password):
-    # 字母和数字组合，8-16位
-    pattern = re.compile('^(?=.*+!@[0-9])(?=.*+!@[A-z])[0-9a-zA-Z]{8,16}$')
-    if re.match(pattern,password):
-        return True
-    return False
+    
+# 检测密码格式 
+def CheckPassword(password):  
+    # 字母、数字和可选字符!@#*?.+，至少一个数字和一个字母，8-16位  
+    pattern = re.compile('^(?=.*[0-9])(?=.*[a-zA-Z])[0-9a-zA-Z!@#*?.+]{8,16}$')  
+    if re.match(pattern, password):   
+        return True  
+    return False 
 
 
 # 注册用户--初始化一个用户
@@ -102,11 +102,24 @@ def InitUser(phoneNum, password, nick, sex, idCard):
 # 校验账户
 def VerifyAccount(userId, password):
     # 按照账号直接取出密码，后面可以直接按照密码进行校验，可以少一次数据库查找
-    result = Config.gdb.select("user",where = "userid=$userid",vars=dict(userid=userId),what='password')
+    result = Config.gdb.select("user",what='password',where = "userid=$userid",vars=dict(userid=userId))
     # 没查到账号，用户不存在
     if not result:
         return {'code':ErrorCfg.EC_LOGIN_USERID_ERROR,'reason':ErrorCfg.ER_LOGIN_USERID_ERROR}
-    if result[0].password != password:
+    # 密码错误
+    if result[0]['password'] != password:
         return {'code':ErrorCfg.EC_LOGIN_PASSWORD_ERROR,'reason':ErrorCfg.ER_LOGIN_PASSWORD_ERROR}
+    # 取出该账号的状态，如果已冻结的话，返回错误
+    result = Config.gdb.select("user",what='status',where = "userid=$userid",vars=dict(userid=userId))
+    # 账号已冻结
+    if result[0]['status'] == Config.USER_STATUS_FRERZE:
+        return {'code':ErrorCfg.EC_LOGIN_STATUS_FRERZE,'reason':ErrorCfg.ER_LOGIN_STATUS_FRERZE}
     return {'code':0}
 
+# 登录处理
+def HandleLogin(userId):
+    # 获取当前时间
+    now = datetime.datetime.now()
+    # 更新登录时间
+    DBManage.UpdateLastLoginTime(userId,now)
+    return {'code':0}
