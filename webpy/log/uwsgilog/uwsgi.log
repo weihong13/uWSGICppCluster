@@ -166,3 +166,589 @@ spawned uWSGI http 1 (pid: 18422)
 WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5fc84fe7f610 pid: 18421 (default app)
 WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5fc84fe7f610 pid: 18420 (default app)
 [pid: 18420|app: 0|req: 1/1] 192.168.0.91 () {36 vars in 543 bytes} [Tue Aug 20 19:05:59 2024] POST /login?userId=19903236282&password=weihong1223 => generated 11 bytes in 15 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 18422)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Tue Aug 20 21:57:34 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:46147 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x5bad8b7af610
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 18782)
+spawned uWSGI worker 1 (pid: 18783, cores: 4)
+spawned uWSGI worker 2 (pid: 18784, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 18785)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5bad8b7af610 pid: 18784 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5bad8b7af610 pid: 18783 (default app)
+[pid: 18784|app: 0|req: 1/1] 192.168.0.91 () {34 vars in 477 bytes} [Tue Aug 20 21:58:15 2024] GET /shop/cfg?version=10000 => generated 1457 bytes in 2 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 18785)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Tue Aug 20 23:15:58 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:33167 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x5e41a2571610
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19206)
+spawned uWSGI worker 1 (pid: 19207, cores: 4)
+spawned uWSGI worker 2 (pid: 19208, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 19209)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5e41a2571610 pid: 19208 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5e41a2571610 pid: 19207 (default app)
+2024-08-20 23:16:58|ERROR|app.py:35|'<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "app.py", line 32, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 42, in shopBuy
+    if shopVersion < ShopCfg.SHOP_VERSION:
+TypeError: '<' not supported between instances of 'str' and 'int'
+[pid: 19208|app: 0|req: 1/1] 192.168.0.91 () {36 vars in 470 bytes} [Tue Aug 20 23:16:58 2024] POST /shop/buy => generated 4 bytes in 4 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+2024-08-20 23:17:54|ERROR|app.py:35|'<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "app.py", line 32, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 42, in shopBuy
+    if shopVersion < ShopCfg.SHOP_VERSION:
+TypeError: '<' not supported between instances of 'str' and 'int'
+[pid: 19208|app: 0|req: 2/2] 192.168.0.91 () {36 vars in 619 bytes} [Tue Aug 20 23:17:54 2024] POST /shop/buy?userid=weihong&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 4 bytes in 1 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 1)
+2024-08-20 23:18:19|ERROR|app.py:35|'<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "app.py", line 32, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 42, in shopBuy
+    if shopVersion < ShopCfg.SHOP_VERSION:
+TypeError: '<' not supported between instances of 'str' and 'int'
+[pid: 19207|app: 0|req: 1/3] 192.168.0.91 () {36 vars in 619 bytes} [Tue Aug 20 23:18:19 2024] POST /shop/buy?userid=weihong&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 4 bytes in 4 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 19209)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Tue Aug 20 23:20:07 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:41397 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x58b5b55b7610
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19373)
+spawned uWSGI worker 1 (pid: 19375, cores: 4)
+spawned uWSGI worker 2 (pid: 19376, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 19377)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x58b5b55b7610 pid: 19375 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x58b5b55b7610 pid: 19376 (default app)
+2024-08-20 23:20:13|ERROR|app.py:35|'<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "app.py", line 32, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 42, in shopBuy
+    if shopVersion < ShopCfg.SHOP_VERSION:
+TypeError: '<' not supported between instances of 'str' and 'int'
+[pid: 19375|app: 0|req: 1/1] 192.168.0.91 () {36 vars in 618 bytes} [Tue Aug 20 23:20:13 2024] POST /shop/buy?userid=weihong&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 4 bytes in 3 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 19377)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Tue Aug 20 23:21:10 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:33485 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x574ac225e610
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19442)
+spawned uWSGI worker 1 (pid: 19444, cores: 4)
+spawned uWSGI worker 2 (pid: 19445, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 19446)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x574ac225e610 pid: 19445 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x574ac225e610 pid: 19444 (default app)
+[pid: 19444|app: 0|req: 1/1] 192.168.0.91 () {36 vars in 619 bytes} [Tue Aug 20 23:21:13 2024] POST /shop/buy?userid=weihong&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 63 bytes in 5 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+[pid: 19445|app: 0|req: 1/2] 192.168.0.91 () {36 vars in 619 bytes} [Tue Aug 20 23:23:52 2024] POST /shop/buy?userid=weihong&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 63 bytes in 2 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 19446)
+*** Starting uWSGI 2.0.26 (64bit) on [Tue Aug 20 23:24:08 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8000).
+bind(): Address already in use [core/socket.c line 769]
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Tue Aug 20 23:24:19 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:40629 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x64b62596b610
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19598)
+spawned uWSGI worker 1 (pid: 19599, cores: 4)
+spawned uWSGI worker 2 (pid: 19600, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 19601)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x64b62596b610 pid: 19599 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x64b62596b610 pid: 19600 (default app)
+2024-08-20 23:24:24|ERROR|app.py:35|1001
+Traceback (most recent call last):
+  File "app.py", line 32, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 53, in shopBuy
+    if version < cfg[propId]['version']:
+KeyError: 1001
+[pid: 19600|app: 0|req: 1/1] 192.168.0.91 () {36 vars in 619 bytes} [Tue Aug 20 23:24:24 2024] POST /shop/buy?userid=weihong&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 4 bytes in 7 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.26 (64bit) on [Wed Aug 21 15:10:15 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8000).
+bind(): Address already in use [core/socket.c line 769]
+Wed Aug 21 15:11:05 2024 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 21 15:11:05 2024 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 21 15:11:05 2024 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 21 15:11:05 2024 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.26 (64bit) on [Wed Aug 21 15:11:15 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:45719 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x5abb582305c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21524)
+spawned uWSGI worker 1 (pid: 21526, cores: 4)
+spawned uWSGI worker 2 (pid: 21527, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 21528)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5abb582305c0 pid: 21527 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5abb582305c0 pid: 21526 (default app)
+2024-08-21 15:11:21|ERROR|app.py:35|1001
+Traceback (most recent call last):
+  File "app.py", line 32, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 53, in shopBuy
+    if version < cfg[propId]['version']:
+KeyError: 1001
+[pid: 21526|app: 0|req: 1/1] 192.168.0.91 () {36 vars in 618 bytes} [Wed Aug 21 15:11:21 2024] POST /shop/buy?userid=weihong&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 4 bytes in 8 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 21528)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Wed Aug 21 15:13:36 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:42655 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x6400e22985c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21603)
+spawned uWSGI worker 1 (pid: 21604, cores: 4)
+spawned uWSGI worker 2 (pid: 21605, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 21606)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x6400e22985c0 pid: 21605 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x6400e22985c0 pid: 21604 (default app)
+2024-08-21 15:13:40|ERROR|app.py:35|'>' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "app.py", line 32, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 57, in shopBuy
+    if buyNum > cfg['buylimitnum']:
+TypeError: '>' not supported between instances of 'str' and 'int'
+[pid: 21604|app: 0|req: 1/1] 192.168.0.91 () {36 vars in 619 bytes} [Wed Aug 21 15:13:40 2024] POST /shop/buy?userid=weihong&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 4 bytes in 5 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 21606)
+*** Starting uWSGI 2.0.26 (64bit) on [Wed Aug 21 15:14:05 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8000).
+bind(): Address already in use [core/socket.c line 769]
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Wed Aug 21 15:14:13 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:33395 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x59dbf095b5c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21742)
+spawned uWSGI worker 1 (pid: 21743, cores: 4)
+spawned uWSGI worker 2 (pid: 21744, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 21745)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x59dbf095b5c0 pid: 21743 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x59dbf095b5c0 pid: 21744 (default app)
+[pid: 21744|app: 0|req: 1/1] 192.168.0.91 () {36 vars in 619 bytes} [Wed Aug 21 15:14:17 2024] POST /shop/buy?userid=weihong&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 5 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 21745)
+*** Starting uWSGI 2.0.26 (64bit) on [Wed Aug 21 15:14:50 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8000).
+bind(): Address already in use [core/socket.c line 769]
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Wed Aug 21 15:14:58 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:34023 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x5c22049545c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21853)
+spawned uWSGI worker 1 (pid: 21855, cores: 4)
+spawned uWSGI worker 2 (pid: 21856, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 21857)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5c22049545c0 pid: 21856 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5c22049545c0 pid: 21855 (default app)
+[pid: 21856|app: 0|req: 1/1] 192.168.0.91 () {36 vars in 619 bytes} [Wed Aug 21 15:15:02 2024] POST /shop/buy?userid=weihong&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 4 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 21857)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Wed Aug 21 15:15:38 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:35901 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x5811610495c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21934)
+spawned uWSGI worker 1 (pid: 21936, cores: 4)
+spawned uWSGI worker 2 (pid: 21937, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 21938)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5811610495c0 pid: 21937 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5811610495c0 pid: 21936 (default app)
+[pid: 21937|app: 0|req: 1/1] 192.168.0.91 () {36 vars in 619 bytes} [Wed Aug 21 15:15:42 2024] POST /shop/buy?userid=weihong&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 5 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 21938)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Wed Aug 21 15:15:54 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:38121 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x5f33af0d55c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22012)
+spawned uWSGI worker 1 (pid: 22014, cores: 4)
+spawned uWSGI worker 2 (pid: 22015, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 22016)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5f33af0d55c0 pid: 22015 (default app)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5f33af0d55c0 pid: 22014 (default app)
+[pid: 22014|app: 0|req: 1/1] 192.168.0.91 () {36 vars in 619 bytes} [Wed Aug 21 15:15:58 2024] POST /shop/buy?userid=weihong&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 63 bytes in 3 msecs (HTTP/1.1 200) 0 headers in 19 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 22016)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.

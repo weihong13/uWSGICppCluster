@@ -10,7 +10,7 @@ import ErrorCfg
 # 账号相关的函数
 
 # 检测手机号格式
-def CheckPhoneNum(phoneNum):
+def checkPhoneNum(phoneNum):
     # 1、使用号段列表进行判断
     phoneList = [139,138,137,136,134,135,147,150,151,152,157,158,159,172,178,
                  130,131,132,140,145,146,155,156,166,185,186,175,176,196,
@@ -25,7 +25,7 @@ def CheckPhoneNum(phoneNum):
 
 
 # 检验账号是否重复
-def CheckUserIdNotRepeat(userId):
+def checkUserIdNotRepeat(userId):
     # 检测账号是否重复，重复返回false 不重复返回true
     result = Config.gdb.select("user",where = "userid=$userid",vars=dict(userid=userId),what='count(*) as num')
     # 等于这个
@@ -37,7 +37,7 @@ def CheckUserIdNotRepeat(userId):
     return True
 
 # 检测身份证号是否正确
-def CheckIdCard(idCard):  
+def checkIdCard(idCard):  
     strIdCard = str(idCard).strip()  
     if not strIdCard.isdigit() and (len(strIdCard) != 15 and len(strIdCard) != 18):
         return False  
@@ -84,7 +84,7 @@ def CheckIdCard(idCard):
         return False
     
 # 检测密码格式 
-def CheckPassword(password):  
+def checkPassword(password):  
     # 字母、数字和可选字符!@#*?.+，至少一个数字和一个字母，8-16位  
     pattern = re.compile('^(?=.*[0-9])(?=.*[a-zA-Z])[0-9a-zA-Z!@#*?.+]{8,16}$')  
     if re.match(pattern, password):   
@@ -93,14 +93,14 @@ def CheckPassword(password):
 
 
 # 注册用户--初始化一个用户
-def InitUser(phoneNum, password, nick, sex, idCard):
+def initUser(phoneNum, password, nick, sex, idCard):
     now = datetime.datetime.now()
-    DBManage.InsertRegisterUser(phoneNum, password, nick, sex, idCard,now)
+    DBManage.insertRegisterUser(phoneNum, password, nick, sex, idCard,now)
     # 初始化用户背包
 
 
 # 校验账户
-def VerifyAccount(userId, password):
+def verifyAccount(userId, password):
     # 按照账号直接取出密码，后面可以直接按照密码进行校验，可以少一次数据库查找
     result = Config.gdb.select("user",what='password',where = "userid=$userid",vars=dict(userid=userId))
     # 没查到账号，用户不存在
@@ -117,9 +117,9 @@ def VerifyAccount(userId, password):
     return {'code':0}
 
 # 登录处理
-def HandleLogin(userId):
+def handleLogin(userId):
     # 获取当前时间
     now = datetime.datetime.now()
     # 更新登录时间
-    DBManage.UpdateLastLoginTime(userId,now)
+    DBManage.updateLastLoginTime(userId,now)
     return {'code':0}

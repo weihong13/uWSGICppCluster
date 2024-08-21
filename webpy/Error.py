@@ -4,5 +4,5 @@
 
 import json
 
-def ErrResult(code,reason):
+def errResult(code,reason):
     return json.dumps({'code':code,'reason':reason})

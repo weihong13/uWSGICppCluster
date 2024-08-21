@@ -5,7 +5,7 @@ import Config
 # 操作数据库的模块
 
 # 插入一个新注册的用户
-def InsertRegisterUser(phoneNum, password, nick, sex, idCard,now):
+def insertRegisterUser(phoneNum, password, nick, sex, idCard,now):
     Config.gdb.insert(
         "user",
         userid = int(phoneNum),
@@ -21,7 +21,7 @@ def InsertRegisterUser(phoneNum, password, nick, sex, idCard,now):
     )
 
 # 更新用户的最后登录时间
-def UpdateLastLoginTime(userId,now):
+def updateLastLoginTime(userId,now):
     Config.gdb.update(
         "user",
         lastlogintime = now,

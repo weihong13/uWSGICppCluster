@@ -1,28 +1,18 @@
-2024-08-20 18:51:41|ERROR|app.py:31|'cod'
+2024-08-21 15:11:21|ERROR|app.py:35|1001
 Traceback (most recent call last):
-  File "app.py", line 29, in wrapper
+  File "app.py", line 32, in wrapper
     return func(*args,**kwargs)
-  File "app.py", line 76, in POST
-    if result['cod'] != 0:
-KeyError: 'cod'
-2024-08-20 18:54:44|ERROR|app.py:31|'cod'
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 53, in shopBuy
+    if version < cfg[propId]['version']:
+KeyError: 1001
+2024-08-21 15:13:40|ERROR|app.py:35|'>' not supported between instances of 'str' and 'int'
 Traceback (most recent call last):
-  File "app.py", line 29, in wrapper
+  File "app.py", line 32, in wrapper
     return func(*args,**kwargs)
-  File "app.py", line 76, in POST
-    if result['cod'] != 0:
-KeyError: 'cod'
-2024-08-20 18:57:33|ERROR|app.py:31|'cod'
-Traceback (most recent call last):
-  File "app.py", line 29, in wrapper
-    return func(*args,**kwargs)
-  File "app.py", line 76, in POST
-    if result['cod'] != 0:
-KeyError: 'cod'
-2024-08-20 19:05:03|ERROR|app.py:31|'cod'
-Traceback (most recent call last):
-  File "app.py", line 29, in wrapper
-    return func(*args,**kwargs)
-  File "app.py", line 76, in POST
-    if result['cod'] != 0:
-KeyError: 'cod'
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 57, in shopBuy
+    if buyNum > cfg['buylimitnum']:
+TypeError: '>' not supported between instances of 'str' and 'int'

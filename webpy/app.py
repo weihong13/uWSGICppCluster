@@ -6,11 +6,14 @@ import Error
 import json
 import logging
 import logging.config
+import Shop
 
 urls = (
     '/','hello',
     '/register','Register',
     '/login','Login',
+    '/shop/cfg','ShopCfg',
+    '/shop/buy','ShopBuy',
 )
 
 app = web.application(urls,globals())
@@ -23,7 +26,7 @@ logger = logging.getLogger('applog')
 
 
 # 装饰器--异常捕获
-def CatchError(func):
+def catchError(func):
     def wrapper(*args,**kwargs):
         try:
             return func(*args,**kwargs)
@@ -39,47 +42,75 @@ class hello:
         return 'Hello' + name
 
 class Register:
-    @CatchError
+    @catchError
     def POST(self):
-        req = web.input(password = '', phoneNum = '', nick = '', sex = '', idCard = '')
+        req = web.input(password = '', phonenum = '', nick = '', sex = '', idcard = '')
         password = req.password
-        phoneNum = req.phoneNum
+        phoneNum = req.phonenum
         nick = req.nick
         sex = req.sex
-        idCard = req.idCard
+        idCard = req.idcard
         # 检验手机格式
-        if not Account.CheckPhoneNum(phoneNum):
+        if not Account.checkPhoneNum(phoneNum):
             return Error.ErrResult(ErrorCfg.EC_REGISTER_PHONENUM_TYPE_ERROR,ErrorCfg.ER_REGISTER_PHONENUM_TYPE_ERROR)
         # 检验账号是否重复
-        if not Account.CheckUserIdNotRepeat(phoneNum):
+        if not Account.checkUserIdNotRepeat(phoneNum):
             return Error.ErrResult(ErrorCfg.EC_REGISTER_USERID_REPEAT,ErrorCfg.ER_REGISTER_USERID_REPEAT)
         # 检测身份证号是否正确
-        if not Account.CheckIdCard(idCard):
+        if not Account.checkIdCard(idCard):
             return Error.ErrResult(ErrorCfg.EC_REGISTER_IDCARD_ERROR,ErrorCfg.ER_REGISTER_IDCARD_ERROR)
         # 检测密码格式 
-        if not Account.CheckPassword(password):
+        if not Account.checkPassword(password):
             return Error.ErrResult(ErrorCfg.EC_REGISTER_PWD_TYPE_ERROR,ErrorCfg.ER_REGISTER_PWD_TYPE_ERROR)
         
         # 注册账号
         Account.InitUser(phoneNum, password, nick, sex, idCard)
 
-        return json.dumps({'code':111,'reason':'register OK'})
+        return json.dumps({'code':0})
 
 class Login:
-    @CatchError
+    @catchError
     def POST(self):
-        req = web.input(userId = '', password = '')
-        userId = req.userId
+        req = web.input(userid = '', password = '')
+        userId = req.userid
         password = req.password
         # 获取登录结果
-        result = Account.VerifyAccount(userId,password)
+        result = Account.verifyAccount(userId,password)
         # 登录失败，直接返回结果
         if result['code'] != 0:
-            return Error.ErrResult(result['code'],result['reason'])
+            return Error.errResult(result['code'],result['reason'])
         # 登录成功，进行下一步处理
         result = Account.HandleLogin(userId)
         return json.dumps({'code':0})
 
+class ShopCfg:
+    @catchError
+    def GET(self):
+        req = web.input(version = '')
+        version = int(req.version)
+        
+        # 获取商城配置
+        shopCfg = Shop.getShopCfg(version)
+
+        return json.dumps({'code':0,'shopcfg':shopCfg})
+
+class ShopBuy:
+    @catchError
+    def POST(self):
+        req = web.input(userid = '', propid = '', buynum = '',shopversion = '', version = '')
+
+        userId = req.userid
+        propId = int(req.propid)
+        buyNum = int(req.buynum)
+        shopVersion = int(req.shopversion)
+        version = int(req.version)
+
+        buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+        if buyInfo['code'] != 0:
+            return Error.errResult(buyInfo['code'],buyInfo['reason'])
+
+
+        return json.dumps({'code':0})
 
 # if __name__ == '__main__':
 #     # app.run()
