@@ -64,6 +64,6 @@ def shopBuy(userId, propId, buyNum, shopVersion, version):
     
     # 购买
     # 获取用余额、扣钱等操作（后续完善）
-
+    
     # 发货
     return {'code':0}

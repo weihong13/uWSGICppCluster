@@ -28,3 +28,10 @@ def updateLastLoginTime(userId,now):
         where = "userid=$userid",
         vars = dict(userid=userId)
     )
+
+# 初始化背包信息
+def initPackage(packageInfo):
+    result = Config.gdb.insert(
+        "package",
+        **packageInfo
+    )

@@ -4,6 +4,8 @@
 
 
 # 通用错误[1-99]
+EC_LOGIN_INVALID = 1
+ER_LOGIN_INVALID = "请重新登录"
 
 
 # 注册错误[100-199]

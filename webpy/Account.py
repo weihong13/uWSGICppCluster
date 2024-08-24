@@ -84,10 +84,10 @@ def checkIdCard(idCard):
         return False
     
 # 检测密码格式 
-def checkPassword(password):  
+def checkPassword(password):
     # 字母、数字和可选字符!@#*?.+，至少一个数字和一个字母，8-16位  
     pattern = re.compile('^(?=.*[0-9])(?=.*[a-zA-Z])[0-9a-zA-Z!@#*?.+]{8,16}$')  
-    if re.match(pattern, password):   
+    if re.match(pattern, password): 
         return True  
     return False 
 
@@ -97,12 +97,34 @@ def initUser(phoneNum, password, nick, sex, idCard):
     now = datetime.datetime.now()
     DBManage.insertRegisterUser(phoneNum, password, nick, sex, idCard,now)
     # 初始化用户背包
+    strKey = Config.KEY_PACKAGE.format(userid = phoneNum)
+    packageInfo = {
+        'bond':0,
+        'coin':Config.NEWUSER_DEFAULT_COIN,
+        'prop_1001':0,
+        'prop_1002':0,
+        'prop_1003':0,
+        'prop_1004':0,
+        'prop_1005':0,
+        'freshtime':str(now),
+    }
+    Config.grds.hmset(strKey,packageInfo)
+    packageInfo['userid'] = phoneNum
+    DBManage.initPackage(packageInfo)
 
 
 # 校验账户
 def verifyAccount(userId, password):
+    if str(userId).isdigit():
+         return {'code':ErrorCfg.EC_LOGIN_USERID_ERROR,'reason':ErrorCfg.ER_LOGIN_USERID_ERROR}
+    
     # 按照账号直接取出密码，后面可以直接按照密码进行校验，可以少一次数据库查找
+
+    print(userId)
     result = Config.gdb.select("user",what='password',where = "userid=$userid",vars=dict(userid=userId))
+
+    # result = Config.gdb.query("select password from user where userid = {}".format(userId))
+
     # 没查到账号，用户不存在
     if not result:
         return {'code':ErrorCfg.EC_LOGIN_USERID_ERROR,'reason':ErrorCfg.ER_LOGIN_USERID_ERROR}
@@ -117,7 +139,8 @@ def verifyAccount(userId, password):
     return {'code':0}
 
 # 登录处理
-def handleLogin(userId):
+def handleLogin(userId, session):
+    session['userid'] = userId
     # 获取当前时间
     now = datetime.datetime.now()
     # 更新登录时间
