@@ -35,3 +35,17 @@ def initPackage(packageInfo):
         "package",
         **packageInfo
     )
+
+# 更新金钱
+def updateMoney(userId, paytype, money, now):
+    
+    Config.gdb.query("update package set {paytype} = {money}, freshtime = '{now}' where userid = {userid}".format(paytype=paytype, money=money, now=now, userid=userId))
+
+# 更新背包
+def updatePackage(userId, propDict, now):
+    propStr = ''
+    for k,v in propDict.items():
+        propStr += str(k) + "=" + str(v) +","
+        print(propStr)
+
+    Config.gdb.query("update package set {propstr} freshtime = '{now}' where userid = {userid}".format(propstr = propStr, now = now, userid= userId))

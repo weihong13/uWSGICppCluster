@@ -108,14 +108,19 @@ def initUser(phoneNum, password, nick, sex, idCard):
         'prop_1005':0,
         'freshtime':str(now),
     }
+    # 将用户的背包信息放入缓存中。
+    # 还需要设置缓存中用户背包信息的过期时间，设一个月。不然，一直占用缓存
+    # 但是要在登录之后，重新设置背包信息的过期时间
     Config.grds.hmset(strKey,packageInfo)
+    Config.grds.expire(strKey,30*24*60*60)
+
     packageInfo['userid'] = phoneNum
     DBManage.initPackage(packageInfo)
 
 
 # 校验账户
 def verifyAccount(userId, password):
-    if str(userId).isdigit():
+    if not str(userId).isdigit():
          return {'code':ErrorCfg.EC_LOGIN_USERID_ERROR,'reason':ErrorCfg.ER_LOGIN_USERID_ERROR}
     
     # 按照账号直接取出密码，后面可以直接按照密码进行校验，可以少一次数据库查找
@@ -140,9 +145,21 @@ def verifyAccount(userId, password):
 
 # 登录处理
 def handleLogin(userId, session):
-    session['userid'] = userId
-    # 获取当前时间
+     # 获取当前时间
     now = datetime.datetime.now()
+    # 使用session记录登录状态
+    session['userid'] = userId
+
+    # 添加一个新的键，为登录的key，设置过期时间，该键值过期之后，就需要重新登录。
+    loginInfo = {
+        'freshtime':str(now),
+    }
+    Config.grds.hmset(Config.KEY_LOGINE.format(userid=userId), loginInfo)
+    Config.grds.expire(Config.KEY_LOGINE.format(userid=userId), Config.LOGIN_INVALID_TIME)
+
+    # 更新背包信息的过期时间
+    Config.grds.expire(Config.KEY_PACKAGE.format(userid = userId),30*24*60*60)
     # 更新登录时间
     DBManage.updateLastLoginTime(userId,now)
+
     return {'code':0}

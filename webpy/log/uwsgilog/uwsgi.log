@@ -5729,3 +5729,853 @@ WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x575cf3fea5c0 pid:
 [pid: 16245|app: 0|req: 3/3] 192.168.0.91 () {38 vars in 617 bytes} [Sat Aug 24 21:44:35 2024] POST /login?userid=199a03236281&password=weihong1223 => generated 93 bytes in 5 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
 1990323628a
 [pid: 16245|app: 0|req: 4/4] 192.168.0.91 () {38 vars in 615 bytes} [Sat Aug 24 21:44:43 2024] POST /login?userid=1990323628a&password=weihong1223 => generated 93 bytes in 8 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 21:44:34 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8000).
+bind(): Address already in use [core/socket.c line 769]
+Sun Aug 25 21:45:13 2024 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug 25 21:45:13 2024 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug 25 21:45:13 2024 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug 25 21:45:13 2024 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug 25 21:45:13 2024 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug 25 21:45:13 2024 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 21:45:22 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:40371 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x603e232105c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19491)
+spawned uWSGI worker 1 (pid: 19492, cores: 4)
+spawned uWSGI worker 2 (pid: 19493, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 19494)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x603e232105c0 pid: 19492 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x603e232105c0 pid: 19493 (default app)
+[pid: 19493|app: 0|req: 1/1] 192.168.0.91 () {34 vars in 477 bytes} [Sun Aug 25 21:45:30 2024] GET /shop/cfg?version=10000 => generated 55 bytes in 7 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+1990323628a
+[pid: 19492|app: 0|req: 1/2] 192.168.0.91 () {38 vars in 614 bytes} [Sun Aug 25 21:45:52 2024] POST /login?userid=1990323628a&password=weihong1223 => generated 93 bytes in 23 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 19492|app: 0|req: 2/3] 192.168.0.91 () {38 vars in 614 bytes} [Sun Aug 25 21:45:58 2024] POST /login?userid=19903236281&password=weihong1223 => generated 93 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+[pid: 19492|app: 0|req: 3/4] 192.168.0.91 () {38 vars in 614 bytes} [Sun Aug 25 21:46:10 2024] POST /login?userid=19903236281&password=weihong1223 => generated 93 bytes in 2 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+[pid: 19492|app: 0|req: 4/5] 192.168.0.91 () {38 vars in 708 bytes} [Sun Aug 25 21:46:34 2024] POST /register?password=weihong1223&phonenum=19903236281&nick=GHW1&sex=1&idcard=410305202002293215 => generated 111 bytes in 4 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 19493|app: 0|req: 2/6] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 21:46:44 2024] POST /login?userid=19903236281&password=weihong1223 => generated 93 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 19493|app: 0|req: 3/7] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 21:47:17 2024] POST /login?userid=19903236281&password=weihong1223 => generated 93 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+[pid: 19493|app: 0|req: 4/8] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 21:47:26 2024] POST /login?userid=19903236281&password=weihong1223 => generated 93 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 19494)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 21:48:42 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:46099 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x59c98c3025c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19752)
+spawned uWSGI worker 1 (pid: 19753, cores: 4)
+spawned uWSGI worker 2 (pid: 19754, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 19755)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x59c98c3025c0 pid: 19754 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x59c98c3025c0 pid: 19753 (default app)
+19903236281
+[pid: 19754|app: 0|req: 1/1] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 21:48:48 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 18 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 19753|app: 0|req: 1/2] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 21:48:51 2024] GET /shop/cfg?version=10000 => generated 55 bytes in 5 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 19754|app: 0|req: 2/3] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 21:49:34 2024] GET /shop/cfg?version=10000 => generated 55 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 19755)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 21:49:52 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:33365 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x648344e085c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19888)
+spawned uWSGI worker 1 (pid: 19889, cores: 4)
+spawned uWSGI worker 2 (pid: 19890, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 19891)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x648344e085c0 pid: 19889 (default app)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x648344e085c0 pid: 19890 (default app)
+[pid: 19890|app: 0|req: 1/1] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 21:49:56 2024] GET /shop/cfg?version=10000 => generated 55 bytes in 7 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+19903236281
+[pid: 19889|app: 0|req: 1/2] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 21:50:00 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 14 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+2024-08-25 21:50:04|ERROR|app.py:43|'pid'
+Traceback (most recent call last):
+  File "app.py", line 40, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 50, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 115, in GET
+    shopCfg = Shop.getShopCfg(version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 40, in getShopCfg
+    strKey = Config.KEY_SHOP_CFG_INVENTORY.format(product['pid'])
+KeyError: 'pid'
+[pid: 19890|app: 0|req: 2/3] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 21:50:04 2024] GET /shop/cfg?version=10000 => generated 4 bytes in 5 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 19891)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 21:53:39 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:37441 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x562a23bdb5c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20013)
+spawned uWSGI worker 1 (pid: 20014, cores: 4)
+spawned uWSGI worker 2 (pid: 20015, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 20016)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x562a23bdb5c0 pid: 20015 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x562a23bdb5c0 pid: 20014 (default app)
+[pid: 20015|app: 0|req: 1/1] 192.168.0.91 () {36 vars in 548 bytes} [Sun Aug 25 21:53:46 2024] GET /shop/cfg?version=10000 => generated 55 bytes in 5 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+19903236281
+[pid: 20015|app: 0|req: 2/2] 192.168.0.91 () {38 vars in 614 bytes} [Sun Aug 25 21:53:49 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 12 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+2024-08-25 21:53:52|ERROR|app.py:43|'pid'
+Traceback (most recent call last):
+  File "app.py", line 40, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 50, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 115, in GET
+    shopCfg = Shop.getShopCfg(version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 41, in getShopCfg
+    strKey = Config.KEY_SHOP_CFG_INVENTORY.format(pid)
+KeyError: 'pid'
+[pid: 20015|app: 0|req: 3/3] 192.168.0.91 () {36 vars in 548 bytes} [Sun Aug 25 21:53:52 2024] GET /shop/cfg?version=10000 => generated 4 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 20016)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 21:55:48 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:46469 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x5e31971175c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20150)
+spawned uWSGI worker 1 (pid: 20152, cores: 4)
+spawned uWSGI worker 2 (pid: 20153, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 20154)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5e31971175c0 pid: 20152 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5e31971175c0 pid: 20153 (default app)
+19903236281
+[pid: 20153|app: 0|req: 1/1] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 21:55:52 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 12 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 20152|app: 0|req: 1/2] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 21:55:55 2024] GET /shop/cfg?version=10000 => generated 1462 bytes in 5 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+2024-08-25 21:56:21|ERROR|app.py:43|BasicKeyCommands.get() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "app.py", line 40, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 50, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 131, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 78, in shopBuy
+    money = Lobby.getMoney(userId,paytype)
+  File "/home/weihong/backendFrame/webpy/./Lobby.py", line 15, in getMoney
+    money = int(Config.grds.get(strKey,paytype))
+TypeError: BasicKeyCommands.get() takes 2 positional arguments but 3 were given
+[pid: 20153|app: 0|req: 2/3] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 21:56:21 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 4 bytes in 5 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 20153|app: 0|req: 3/4] 192.168.0.91 () {38 vars in 709 bytes} [Sun Aug 25 22:03:05 2024] POST /register?password=weihong1223&phonenum=19903236280&nick=GHW1&sex=1&idcard=410305202002293215 => generated 11 bytes in 19 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+19903236281
+[pid: 20153|app: 0|req: 4/5] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 22:03:09 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 10 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+19903236280
+[pid: 20153|app: 0|req: 5/6] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 22:03:15 2024] POST /login?userid=19903236280&password=weihong1223 => generated 11 bytes in 10 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 20154)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 22:06:23 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:35017 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x6348012145c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20356)
+spawned uWSGI worker 1 (pid: 20357, cores: 4)
+spawned uWSGI worker 2 (pid: 20358, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 20359)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x6348012145c0 pid: 20358 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x6348012145c0 pid: 20357 (default app)
+19903236280
+[pid: 20358|app: 0|req: 1/1] 192.168.0.91 () {38 vars in 614 bytes} [Sun Aug 25 22:06:29 2024] POST /login?userid=19903236280&password=weihong1223 => generated 11 bytes in 16 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+19903236281
+[pid: 20358|app: 0|req: 2/2] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 22:06:43 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 8 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 20358|app: 0|req: 3/3] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 22:06:46 2024] GET /shop/cfg?version=10000 => generated 1462 bytes in 4 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+2024-08-25 22:06:59|ERROR|app.py:43|(1054, "Unknown column 'paytype' in 'field list'")
+Traceback (most recent call last):
+  File "app.py", line 40, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 50, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 131, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 99, in shopBuy
+    DBManage.updateMoney(userId, paytype, money, now)
+  File "/home/weihong/backendFrame/webpy/./DBManage.py", line 40, in updateMoney
+    Config.gdb.update(
+  File "/usr/local/lib/python3.10/dist-packages/web/db.py", line 1145, in update
+    self._db_execute(db_cursor, query)
+  File "/usr/local/lib/python3.10/dist-packages/web/db.py", line 764, in _db_execute
+    out = cur.execute(query, params)
+  File "/usr/local/lib/python3.10/dist-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.10/dist-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.10/dist-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.10/dist-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.10/dist-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.10/dist-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/usr/local/lib/python3.10/dist-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.10/dist-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'paytype' in 'field list'")
+[pid: 20357|app: 0|req: 1/4] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 22:06:59 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 4 bytes in 15 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 20359)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 22:14:13 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:33055 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x586b6e39e5c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20563)
+spawned uWSGI worker 1 (pid: 20564, cores: 4)
+spawned uWSGI worker 2 (pid: 20565, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 20566)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x586b6e39e5c0 pid: 20564 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x586b6e39e5c0 pid: 20565 (default app)
+19903236281
+[pid: 20565|app: 0|req: 1/1] 192.168.0.91 () {38 vars in 614 bytes} [Sun Aug 25 22:14:23 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 13 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 20564|app: 0|req: 1/2] 192.168.0.91 () {36 vars in 548 bytes} [Sun Aug 25 22:14:25 2024] GET /shop/cfg?version=10000 => generated 1462 bytes in 4 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+2024-08-25 22:14:41|ERROR|app.py:43|'pid'
+Traceback (most recent call last):
+  File "app.py", line 40, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 50, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 131, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 106, in shopBuy
+    inventory = Lobby.getInventory(propId)
+  File "/home/weihong/backendFrame/webpy/./Lobby.py", line 41, in getInventory
+    strKey = Config.KEY_SHOP_CFG_INVENTORY.format(pid)
+KeyError: 'pid'
+[pid: 20564|app: 0|req: 2/3] 192.168.0.91 () {38 vars in 698 bytes} [Sun Aug 25 22:14:41 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 4 bytes in 11 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 20566)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 22:17:11 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:34349 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x58ff1c6f55c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20719)
+spawned uWSGI worker 1 (pid: 20721, cores: 4)
+spawned uWSGI worker 2 (pid: 20722, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 20723)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x58ff1c6f55c0 pid: 20722 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x58ff1c6f55c0 pid: 20721 (default app)
+19903236281
+[pid: 20722|app: 0|req: 1/1] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 22:17:16 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 13 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 20722|app: 0|req: 2/2] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 22:17:18 2024] GET /shop/cfg?version=10000 => generated 1462 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 20721|app: 0|req: 1/3] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 22:17:25 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 11 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 20721|app: 0|req: 2/4] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 22:18:04 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 55 bytes in 2 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+19903236281
+[pid: 20721|app: 0|req: 3/5] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 22:18:14 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 10 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+2024-08-25 22:18:22|ERROR|app.py:43|BasicKeyCommands.get() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "app.py", line 40, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 50, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 131, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 106, in shopBuy
+    inventory = Lobby.getInventory(propId)
+  File "/home/weihong/backendFrame/webpy/./Lobby.py", line 44, in getInventory
+    inventory = int(Config.grds.get(strKey,'inventory'))
+TypeError: BasicKeyCommands.get() takes 2 positional arguments but 3 were given
+[pid: 20721|app: 0|req: 4/6] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 22:18:22 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 4 bytes in 9 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 20723)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 22:19:00 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:45855 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x5f3ff3ead5c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20912)
+spawned uWSGI worker 1 (pid: 20914, cores: 4)
+spawned uWSGI worker 2 (pid: 20915, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 20916)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5f3ff3ead5c0 pid: 20915 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5f3ff3ead5c0 pid: 20914 (default app)
+19903236281
+[pid: 20915|app: 0|req: 1/1] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 22:19:09 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 12 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 20915|app: 0|req: 2/2] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 22:19:12 2024] GET /shop/cfg?version=10000 => generated 1462 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+[pid: 20915|app: 0|req: 3/3] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 22:19:17 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 10 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 20915|app: 0|req: 4/4] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 22:19:31 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 7 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+[pid: 20914|app: 0|req: 1/5] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 22:19:39 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 10 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+19903236281
+[pid: 20914|app: 0|req: 2/6] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 22:54:17 2024] POST /login?userid=19903236281&password=weihong1223 => generated 93 bytes in 15 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+[pid: 20914|app: 0|req: 3/7] 192.168.0.91 () {38 vars in 709 bytes} [Sun Aug 25 22:54:25 2024] POST /register?password=weihong1223&phonenum=19903236281&nick=GHW1&sex=1&idcard=410305202002293215 => generated 11 bytes in 22 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+19903236281
+[pid: 20914|app: 0|req: 4/8] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 22:54:28 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 9 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 20914|app: 0|req: 5/9] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 22:54:30 2024] GET /shop/cfg?version=10000 => generated 1462 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 20915|app: 0|req: 5/10] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 22:54:37 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 6 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 20915|app: 0|req: 6/11] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 22:54:52 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 20916)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 22:56:09 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:42299 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x5c366c7675c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21361)
+spawned uWSGI worker 1 (pid: 21362, cores: 4)
+spawned uWSGI worker 2 (pid: 21363, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 21364)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5c366c7675c0 pid: 21362 (default app)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5c366c7675c0 pid: 21363 (default app)
+19903236281
+[pid: 21363|app: 0|req: 1/1] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 22:56:18 2024] POST /login?userid=19903236281&password=weihong1223 => generated 93 bytes in 11 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 21362|app: 0|req: 1/2] 192.168.0.91 () {38 vars in 709 bytes} [Sun Aug 25 22:56:21 2024] POST /register?password=weihong1223&phonenum=19903236281&nick=GHW1&sex=1&idcard=410305202002293215 => generated 11 bytes in 14 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 21363|app: 0|req: 2/3] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 22:56:24 2024] GET /shop/cfg?version=10000 => generated 55 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+19903236281
+[pid: 21362|app: 0|req: 2/4] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 22:56:33 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 11 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+[pid: 21362|app: 0|req: 3/5] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 22:56:36 2024] GET /shop/cfg?version=10000 => generated 1462 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+[pid: 21363|app: 0|req: 3/6] 192.168.0.91 () {38 vars in 698 bytes} [Sun Aug 25 22:57:29 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 55 bytes in 2 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+19903236281
+[pid: 21362|app: 0|req: 4/7] 192.168.0.91 () {38 vars in 614 bytes} [Sun Aug 25 22:57:42 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 9 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 21363|app: 0|req: 4/8] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 22:57:45 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 10 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 21363|app: 0|req: 5/9] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 22:58:18 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 55 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+19903236281
+[pid: 21363|app: 0|req: 6/10] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 22:58:29 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 9 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+[pid: 21363|app: 0|req: 7/11] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 22:58:32 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 10 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 21364)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 23:01:21 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:34507 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x585bfc1665c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21694)
+spawned uWSGI worker 1 (pid: 21696, cores: 4)
+spawned uWSGI worker 2 (pid: 21697, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 21698)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x585bfc1665c0 pid: 21697 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x585bfc1665c0 pid: 21696 (default app)
+19903236281
+[pid: 21696|app: 0|req: 1/1] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 23:01:26 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 13 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 21697|app: 0|req: 1/2] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 23:01:35 2024] GET /shop/cfg?version=10000 => generated 1462 bytes in 6 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+prop_1001
+1
+prop_1001=3,
+[pid: 21697|app: 0|req: 2/3] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:01:39 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 10 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 21698)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 23:11:09 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:35985 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x5f5a7ce305c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21896)
+spawned uWSGI worker 1 (pid: 21897, cores: 4)
+spawned uWSGI worker 2 (pid: 21898, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 21899)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5f5a7ce305c0 pid: 21897 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5f5a7ce305c0 pid: 21898 (default app)
+[pid: 21898|app: 0|req: 1/1] 192.168.0.91 () {38 vars in 709 bytes} [Sun Aug 25 23:11:16 2024] POST /register?password=weihong1223&phonenum=19903236281&nick=GHW1&sex=1&idcard=410305202002293215 => generated 11 bytes in 13 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+19903236281
+[pid: 21897|app: 0|req: 1/2] 192.168.0.91 () {38 vars in 615 bytes} [Sun Aug 25 23:11:19 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 14 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 21897|app: 0|req: 2/3] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 23:11:21 2024] GET /shop/cfg?version=10000 => generated 1462 bytes in 4 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+[pid: 21897|app: 0|req: 3/4] 192.168.0.91 () {36 vars in 549 bytes} [Sun Aug 25 23:12:10 2024] GET /shop/cfg?version=10000 => generated 1462 bytes in 2 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+prop_1001
+1
+prop_1001=1,
+[pid: 21897|app: 0|req: 4/5] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:12:13 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 8 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+prop_1001
+1
+prop_1001=2,
+[pid: 21898|app: 0|req: 2/6] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:14:11 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 14 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 21899)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 23:19:38 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:42079 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x5737551515c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22166)
+spawned uWSGI worker 1 (pid: 22167, cores: 4)
+spawned uWSGI worker 2 (pid: 22168, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 22169)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5737551515c0 pid: 22167 (default app)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5737551515c0 pid: 22168 (default app)
+19903236281
+[pid: 22168|app: 0|req: 1/1] 192.168.0.91 () {38 vars in 614 bytes} [Sun Aug 25 23:19:43 2024] POST /login?userid=19903236281&password=weihong1223 => generated 93 bytes in 12 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 22167|app: 0|req: 1/2] 192.168.0.91 () {38 vars in 708 bytes} [Sun Aug 25 23:19:46 2024] POST /register?password=weihong1223&phonenum=19903236281&nick=GHW1&sex=1&idcard=410305202002293215 => generated 11 bytes in 12 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+19903236281
+[pid: 22167|app: 0|req: 2/3] 192.168.0.91 () {38 vars in 614 bytes} [Sun Aug 25 23:19:48 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 8 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+[pid: 22167|app: 0|req: 3/4] 192.168.0.91 () {36 vars in 548 bytes} [Sun Aug 25 23:19:50 2024] GET /shop/cfg?version=10000 => generated 1462 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+prop_1001
+1
+prop_1001=1,
+[pid: 22167|app: 0|req: 4/5] 192.168.0.91 () {38 vars in 698 bytes} [Sun Aug 25 23:19:53 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 10 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+prop_1001
+1
+prop_1001=2,
+[pid: 22168|app: 0|req: 2/6] 192.168.0.91 () {38 vars in 698 bytes} [Sun Aug 25 23:20:29 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 12 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+prop_1001
+1
+prop_1001=3,
+[pid: 22168|app: 0|req: 3/7] 192.168.0.91 () {38 vars in 698 bytes} [Sun Aug 25 23:20:37 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 10 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 22168|app: 0|req: 4/8] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:20:48 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+[pid: 22168|app: 0|req: 5/9] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:21:24 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 22167|app: 0|req: 5/10] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:21:26 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 22167|app: 0|req: 6/11] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:21:41 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+[pid: 22167|app: 0|req: 7/12] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:21:46 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+[pid: 22168|app: 0|req: 6/13] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:23:07 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+[pid: 22167|app: 0|req: 8/14] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:23:07 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 22167|app: 0|req: 9/15] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:23:08 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 22169)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 23:25:24 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:46725 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x64a868d7f5c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22533)
+spawned uWSGI worker 1 (pid: 22535, cores: 4)
+spawned uWSGI worker 2 (pid: 22536, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 22537)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x64a868d7f5c0 pid: 22536 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x64a868d7f5c0 pid: 22535 (default app)
+[pid: 22536|app: 0|req: 1/1] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:25:35 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 6 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 22535|app: 0|req: 1/2] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:25:42 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 5 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 22536|app: 0|req: 2/3] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:25:48 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 2 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 22536|app: 0|req: 3/4] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:25:51 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 19 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 22537)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.26 (64bit) on [Sun Aug 25 23:27:03 2024] ***
+compiled with version: 11.4.0 on 18 August 2024 03:33:53
+os: Linux-6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2
+nodename: weihong
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/weihong/backendFrame/webpy
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/weihong/backendFrame/webpy
+your processes number limit is 15183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:36303 (port auto-assigned) fd 3
+Python version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+Python main interpreter initialized at 0x586b5c7c25c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 656736 bytes (641 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22710)
+spawned uWSGI worker 1 (pid: 22712, cores: 4)
+spawned uWSGI worker 2 (pid: 22713, cores: 4)
+*** Stats server enabled on 127.0.0.1:8001 fd: 14 ***
+spawned uWSGI http 1 (pid: 22714)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x586b5c7c25c0 pid: 22712 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x586b5c7c25c0 pid: 22713 (default app)
+[pid: 22713|app: 0|req: 1/1] 192.168.0.91 () {38 vars in 698 bytes} [Sun Aug 25 23:27:08 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 55 bytes in 6 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+19903236281
+[pid: 22712|app: 0|req: 1/2] 192.168.0.91 () {38 vars in 614 bytes} [Sun Aug 25 23:27:12 2024] POST /login?userid=19903236281&password=weihong1223 => generated 93 bytes in 15 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+[pid: 22712|app: 0|req: 2/3] 192.168.0.91 () {38 vars in 708 bytes} [Sun Aug 25 23:27:14 2024] POST /register?password=weihong1223&phonenum=19903236281&nick=GHW1&sex=1&idcard=410305202002293215 => generated 11 bytes in 12 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+19903236281
+[pid: 22713|app: 0|req: 2/4] 192.168.0.91 () {38 vars in 614 bytes} [Sun Aug 25 23:27:17 2024] POST /login?userid=19903236281&password=weihong1223 => generated 11 bytes in 9 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 22713|app: 0|req: 3/5] 192.168.0.91 () {36 vars in 548 bytes} [Sun Aug 25 23:27:19 2024] GET /shop/cfg?version=10000 => generated 1462 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+prop_1001
+1
+prop_1001=1,
+[pid: 22713|app: 0|req: 4/6] 192.168.0.91 () {38 vars in 698 bytes} [Sun Aug 25 23:27:22 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 9 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
+prop_1001
+1
+prop_1001=2,
+[pid: 22713|app: 0|req: 5/7] 192.168.0.91 () {38 vars in 698 bytes} [Sun Aug 25 23:27:41 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 9 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 0)
+prop_1001
+1
+prop_1001=3,
+[pid: 22712|app: 0|req: 3/8] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:27:56 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 11 bytes in 10 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+[pid: 22713|app: 0|req: 6/9] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:28:20 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 2 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 22713|app: 0|req: 7/10] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:28:43 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 2 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+[pid: 22712|app: 0|req: 4/11] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:28:59 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 2 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 1)
+[pid: 22712|app: 0|req: 5/12] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:29:01 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 3 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 2)
+[pid: 22713|app: 0|req: 8/13] 192.168.0.91 () {38 vars in 699 bytes} [Sun Aug 25 23:29:01 2024] POST /shop/buy?userid=19903236281&propid=1001&buynum=1&shopversion=202408202226&version=10000 => generated 111 bytes in 2 msecs (HTTP/1.1 200) 1 headers in 108 bytes (2 switches on core 3)
