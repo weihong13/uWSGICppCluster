@@ -20,6 +20,8 @@ BUY_LINIT_TYPE_MONTH = 3 # 每月限购
 BUY_LINIT_TYPE_YEAR = 4 # 每年限购
 
 # 商品id
+ID_COIN = 800
+ID_BOND = 900
 ID_EXPCARD_ONCE = 1001 # 双倍经验卡（单场）
 ID_COINCARD_ONEC = 1002 # 双倍金币卡（单场）
 ID_RENAME_CARD = 1003 # 改名卡
@@ -39,6 +41,9 @@ SHOP_LIST = [
 
 # 商品配置
 SHOP_CFG = {
+
+    ID_COIN:{"pid":ID_COIN, "name":"金币", "type":'coin'},
+    ID_BOND:{"pid":ID_BOND, "name":"点券", "type":'bond'},
     ID_EXPCARD_ONCE:{"pid":ID_EXPCARD_ONCE, "name":"双倍经验卡（单场）","type":GOODS_TYPE_CONSUMABLES,"bond":-1, "coin":1000, "paytype":PAY_TYPE_COIN, "iconid":1001, "version":10000, "discount":1, "inventory":3, "buylimittype":BUY_LINIT_TYPE_INVALID, "buylimitnum":2, "porplist":[{"id":ID_EXPCARD_ONCE, "num":1}]},
     
     ID_COINCARD_ONEC:{"pid":ID_COINCARD_ONEC, "name":"双倍金币卡（单场）","type":GOODS_TYPE_CONSUMABLES,"bond":-1, "coin":1000, "paytype":PAY_TYPE_COIN, "iconid":1002, "version":10000, "discount":1, "inventory":-1, "buylimittype":BUY_LINIT_TYPE_INVALID, "buylimitnum":-1, "porplist":[{"id":ID_COINCARD_ONEC, "num":1}]},

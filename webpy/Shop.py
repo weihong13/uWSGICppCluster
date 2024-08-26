@@ -89,24 +89,20 @@ def shopBuy(userId, propId, buyNum, shopVersion, version):
     if money < needMoney:
         return {'code':ErrorCfg.EC_SHOP_BUY_MONEY_NOT_ENOUGH, 'reason':ErrorCfg.ER_SHOP_BUY_MONEY_NOT_ENOUGH}
 
-    
-    strKey = Config.KEY_PACKAGE.format(userid = userId)
-    # 计算剩余的金币或者点券
-    money = Config.grds.hincrby(strKey,paytype,-needMoney)
-    # 如果剩余的金钱小于0了，说明在这个购买操作之间，有其他的操作修改了金币价格，则需要退回
-    if money < 0:
-        # 把金币加回去
-        Config.grds.hincrby(strKey,paytype,+needMoney)
-        # 返回错误
+    # 修改金额
+    result = modifyMoney(userId, paytype, -needMoney)
+    if result['code'] != 0:
         return {'code':ErrorCfg.EC_SHOP_BUY_MONEY_NOT_ENOUGH, 'reason':ErrorCfg.ER_SHOP_BUY_MONEY_NOT_ENOUGH}
-
+    
+    money = result['money']
     
     # 减少库存
     # 获取商品库存的键值
     strKey = Config.KEY_SHOP_CFG_INVENTORY.format(pid=propId)
-
     # 有其他操作导致库存减少，库存不够了
     if inventory < buyNum:
+        # 把金币加回去
+        Config.grds.hincrby(strKey,paytype,+needMoney)
         return {'code':ErrorCfg.EC_INVENTORY_NOT_ENOUGH, 'reason':ErrorCfg.ER_INVENTORY_NOT_ENOUGH}
     # 计算最新的库存
     inventory = Config.grds.hincrby(strKey, 'inventory', -buyNum)
@@ -114,6 +110,8 @@ def shopBuy(userId, propId, buyNum, shopVersion, version):
     if inventory < 0:
         # 进行退回操作
         inventory = Config.grds.hincrby(strKey, 'inventory', +buyNum)
+        # 把金币加回去
+        Config.grds.hincrby(strKey,paytype,+needMoney)
         return {'code':ErrorCfg.EC_INVENTORY_NOT_ENOUGH, 'reason':ErrorCfg.ER_INVENTORY_NOT_ENOUGH}
     # 更新新的库存
     # ！！！ 这一步线程是不安全的！！！！后续需要进行改进，
@@ -121,14 +119,32 @@ def shopBuy(userId, propId, buyNum, shopVersion, version):
     ShopCfg.SHOP_CFG[propId]['inventory'] = inventory
 
     # 发货
-    PresentProp(userId, propId, buyNum)
-    now = datetime.datetime.now()
-    DBManage.updateMoney(userId, paytype, money, now)
+    sendGoods(userId, propId, buyNum)
+
     return {'code':0, paytype:money}
 
 
-# 发货--给背包中添加数据
-def PresentProp(userId, propId, propNum):
+# 发奖励
+
+# 修改金额
+def modifyMoney(userId, paytype, money):
+    now = datetime.datetime.now()
+    strKey = Config.KEY_PACKAGE.format(userid = userId)
+    # 计算剩余的金币或者点券
+    modifiedMoney = Config.grds.hincrby(strKey,paytype,money)
+    # 如果剩余的金钱小于0了，说明在这个购买操作之间，有其他的操作修改了金币价格，则需要退回
+    if modifiedMoney < 0:
+        # 把金币退回到修改之前
+        Config.grds.hincrby(strKey,paytype,-money)
+        # 返回错误
+        return {'code':ErrorCfg.EC_MONEY_NOT_ENOUGH, 'reason':ErrorCfg.ER_MONEY_NOT_ENOUGH}
+
+    DBManage.updateMoney(userId, paytype, modifiedMoney, now)
+    return {'code':0, 'money':modifiedMoney}
+
+
+# 发货--发送道具
+def sendGoods(userId, propId, propNum):
     strKey = Config.KEY_PACKAGE.format(userid=userId)
     propList = ShopCfg.SHOP_CFG[propId]['porplist']
     now = datetime.datetime.now()
@@ -138,7 +154,7 @@ def PresentProp(userId, propId, propNum):
         propid = "prop_"+str(prop['id'])
         print(propid)
         print(prop['num'])
-        singlePropNum = Config.grds.hincrby(strKey, propid, +(prop['num']*propNum))
+        singlePropNum = Config.grds.hincrby(strKey, propid, (prop['num']*propNum))
         propDict[propid] = singlePropNum
     
 

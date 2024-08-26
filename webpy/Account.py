@@ -3,7 +3,7 @@
 import AccountCfg
 import re
 import Config
-import datetime
+import datetime # type: ignore
 import DBManage
 import ErrorCfg
 
@@ -27,7 +27,7 @@ def checkPhoneNum(phoneNum):
 # 检验账号是否重复
 def checkUserIdNotRepeat(userId):
     # 检测账号是否重复，重复返回false 不重复返回true
-    result = Config.gdb.select("user",where = "userid=$userid",vars=dict(userid=userId),what='count(*) as num')
+    result = Config.gdb.select("user",where = "userid=$userid",vars=dict(userid=userId),what='count(*) as num') 
     # 等于这个
     # ret = Config.gdb.query("select count(*) as num from user where userid = {}".format(userId))
     
@@ -91,31 +91,57 @@ def checkPassword(password):
         return True  
     return False 
 
+# 初始化背包
+def initPackage(userId, now):
+    # 初始化用户背包
+    strKey = Config.KEY_PACKAGE.format(userid = userId)
+    # 判断缓存中是否存在数据
+    if Config.grds.exists(strKey):
+        # 存在直接返回即可
+        return
+    else:
+        # 不存在就去数据库取出数据
+        result = Config.gdb.select('package',what = '*',where="userid=$userid",vars=dict(userid=userId))
+        # 取到数据了，说明已经注册了，但是缓存过期了，直接将数据库的数据交给缓存
+        if result:
+            packageInfo = {}
+            for k,v in result[0].items():
+                packageInfo[k] = v
+            # 将用户的背包信息放入缓存中。
+            # 还需要设置缓存中用户背包信息的过期时间，设一个月。不然，一直占用缓存
+            # 但是要在登录之后，重新设置背包信息的过期时间
+            Config.grds.hmset(strKey,packageInfo)
+            Config.grds.expire(strKey,30*24*60*60)
+        # 数据库没取到数据，说明还没有注册，初始化缓存，并初始化数据库
+        else:
+            packageInfo = {
+                'bond':0,
+                'coin':Config.NEWUSER_DEFAULT_COIN,
+                'prop_1001':0,
+                'prop_1002':0,
+                'prop_1003':0,
+                'prop_1004':0,
+                'prop_1005':0,
+                'freshtime':str(now),
+            }
+            # 将用户的背包信息放入缓存中。
+            # 还需要设置缓存中用户背包信息的过期时间，设一个月。不然，一直占用缓存
+            # 但是要在登录之后，重新设置背包信息的过期时间
+            Config.grds.hmset(strKey,packageInfo)
+            Config.grds.expire(strKey,30*24*60*60)
+            # 数据库插入一条数据
+            packageInfo['userid'] = userId
+            DBManage.initPackage(packageInfo)
+
 
 # 注册用户--初始化一个用户
 def initUser(phoneNum, password, nick, sex, idCard):
     now = datetime.datetime.now()
     DBManage.insertRegisterUser(phoneNum, password, nick, sex, idCard,now)
-    # 初始化用户背包
-    strKey = Config.KEY_PACKAGE.format(userid = phoneNum)
-    packageInfo = {
-        'bond':0,
-        'coin':Config.NEWUSER_DEFAULT_COIN,
-        'prop_1001':0,
-        'prop_1002':0,
-        'prop_1003':0,
-        'prop_1004':0,
-        'prop_1005':0,
-        'freshtime':str(now),
-    }
-    # 将用户的背包信息放入缓存中。
-    # 还需要设置缓存中用户背包信息的过期时间，设一个月。不然，一直占用缓存
-    # 但是要在登录之后，重新设置背包信息的过期时间
-    Config.grds.hmset(strKey,packageInfo)
-    Config.grds.expire(strKey,30*24*60*60)
 
-    packageInfo['userid'] = phoneNum
-    DBManage.initPackage(packageInfo)
+    initPackage(phoneNum, now)
+
+    
 
 
 # 校验账户

@@ -10,12 +10,17 @@ import Shop
 from RedisStore import RedisStore
 import Config
 
+import Task
+
 urls = (
     '/','hello',
     '/register','Register',
     '/login','Login',
-    '/shop/cfg','ShopCfg',
-    '/shop/buy','ShopBuy',
+    '/shop/cfg','Shop_Cfg',
+    '/shop/buy','Shop_Buy',
+    '/task/cfg','Task_Cfg',
+    '/task/reward','Task_Reward',
+
 )
 
 app = web.application(urls,globals())
@@ -104,7 +109,7 @@ class Login:
             return Error.errResult(result['code'],result['reason'])
         return json.dumps({'code':0})
 
-class ShopCfg:
+class Shop_Cfg:
     @catchError
     @checkhLogin
     def GET(self):
@@ -116,7 +121,7 @@ class ShopCfg:
 
         return json.dumps({'code':0,'shopcfg':shopCfg})
 
-class ShopBuy:
+class Shop_Buy:
     @catchError
     @checkhLogin
     def POST(self):
@@ -132,6 +137,41 @@ class ShopBuy:
         if buyInfo['code'] != 0:
             return Error.errResult(buyInfo['code'],buyInfo['reason'])
         return json.dumps({'code':0})
+
+# 获取任务配置
+class Task_Cfg:
+    @catchError
+    @checkhLogin
+    def GET(self):
+        req = web.input(userid = '', version = '')
+        userId = int(req.userid)
+        version = int(req.version)
+        
+        # 获取商城配置
+        taskCfg = Task.getTaskCfg(userId,version)
+
+        return json.dumps({'code':0,'taskcfg':taskCfg})
+    
+
+# 获取任务奖励
+class Task_Reward:
+    @catchError
+    @checkhLogin
+    def POST(self):
+        req = web.input(userid = '', taskid = '')
+        userId = int(req.userid)
+        taskId = int(req.taskid)
+        
+        # 领取奖励
+        result = Task.taskReward(userId, taskId)
+
+        if result['code'] != 0:
+            return Error.errResult(result['code'],result['reason'])
+
+
+        return json.dumps({'code':0})
+    
+
 
 # if __name__ == '__main__':
 #     # app.run()

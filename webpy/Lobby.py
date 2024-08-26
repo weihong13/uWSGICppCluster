@@ -2,6 +2,7 @@
 
 import Config
 import ShopCfg
+import datetime
 
 # 通用的一些方法
 
@@ -51,3 +52,9 @@ def getInventory(pid):
         Config.grds.expire(strKey,24*60*60)
     
     return inventory
+
+# 获取本周周一日期
+def getMonday(today):
+    today = datetime.datetime.strptime(str(today),"%Y_%m_%d")
+    monday = today - datetime.timedelta(today.weekday())
+    return datetime.datetime.strftime(monday, "%Y_%m_%d")
