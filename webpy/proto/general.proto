@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message Sign{
+    optional int64 userid = 1;
+    optional int32 signtype = 2;
+    optional string date = 3;
+}

@@ -8,6 +8,9 @@ import json
 import Lobby
 import ShopCfg
 import Shop
+from proto.general_pb2 import Sign
+import Action
+import MessageCfg
 
 # 关于任务的方法
 
@@ -116,7 +119,7 @@ def getTaskCfg(userId,version):
             strDate = getTaskStrDate(cfg['type'], strDate)
             
             strKey = Config.KEY_TASK.format(userid=userId, date=strDate)
-            if Config.grds.exists(strKey):
+            if not Config.grds.exists(strKey):
                 initTaskCfg(userId, strDate, cfg['type'])
             taskInfo = Config.grds.hgetall(strKey)
             if taskInfo:
@@ -141,12 +144,23 @@ def taskReward(userId, taskId):
     now = datetime.datetime.now()
     strDate = now.strftime("%Y_%m_%d")
     strDate = getTaskStrDate(cfg['type'], strDate)
+
     strKey = Config.KEY_TASK.format(userid=userId, date=strDate)
+    # 判断缓存中是否已经有任务配置了，没有的话，需要初始化任务
+    if not Config.grds.exists(strKey):
+        initTaskCfg(userId, strDate)
+
     stateField = 'state_' + str(taskId)
     state = Config.grds.hget(strKey, stateField)
-    # 判断任务是否完成
-    if state != TaskCfg.STATE_FINISH:
+    # 判断任务状态是否完成
+    if int(state) == TaskCfg.STATE_NOT_FINISH:
         return {'code':ErrorCfg.EC_TASK_NOT_FINISH, 'reason':ErrorCfg.ER_TASK_NOT_FINISH} 
+    # 判断任务是否有效
+    if int(state) == TaskCfg.STATE_INVALID:
+        return {'code':ErrorCfg.EC_TASK_STATE_INVALID, 'reason':ErrorCfg.ER_TASK_STATE_INVALID} 
+    # 判断任务是否已经领取奖励了
+    if int(state) == TaskCfg.STATE_AWARDED:
+        return {'code':ErrorCfg.EC_TASK_STATE_AWARDED, 'reason':ErrorCfg.ER_TASK_STATE_AWARDED} 
     
     # 发送奖励
     rewardList = TaskCfg.TASK_CFG[taskId]['rewardlist']
@@ -161,5 +175,37 @@ def taskReward(userId, taskId):
         else:
             # 发送道具
             Shop.sendGoods(userId, rewardId, rewardNum)
-        
+    # 修改任务状态为已领取
+    Config.grds.hset(strKey, stateField, TaskCfg.STATE_AWARDED)
+
+
+    return {'code':0}
+
+# 用户签到
+def userSign(userId, signType, date):
+    # 判断签到类型
+    if signType == TaskCfg.SIGN_TYPE_TODAY:
+        date = datetime.datetime.today()
+    elif signType == TaskCfg.SIGN_TYPE_AGO:
+        date = datetime.datetime.strptime(str(date), "%Y_%m_%d")
+    else:
+        return {'code':ErrorCfg.EC_TASK_SIGN_TYPE_ERROR, 'reason':ErrorCfg.ER_TASK_SIGN_TYPE_ERROR}
+    
+    # 判断这一天是否已经签到 
+    
+    
+    day = date.day
+    month_firstday = str(date.year) + "_" + str(date.month) + "_1"
+    # 签到
+    strKey = Config.KEY_SIGN.format(userid=userId, date=month_firstday)
+    # 设置位图
+    Config.grds.setbit(strKey, day, 1)
+    
+    # 发送签到事件
+    signProto = Sign()
+    signProto.userid = userId
+    signProto.signtype = signType
+    signProto.date = date.strftime("%Y_%m_%d")
+    Action.sendAction(userId, MessageCfg.MSGID_SIGN, signProto.SerializeToString())
+
     return {'code':0}

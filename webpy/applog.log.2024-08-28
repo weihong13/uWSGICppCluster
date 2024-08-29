@@ -1,0 +1,18 @@
+2024-08-27 00:09:36|ERROR|app.py:48|'taskId'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/web/utils.py", line 104, in __getattr__
+    return self[key]
+KeyError: 'taskId'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "app.py", line 45, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 55, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 163, in POST
+    taskId = int(req.taskid)
+  File "/usr/local/lib/python3.10/dist-packages/web/utils.py", line 106, in __getattr__
+    raise AttributeError(k)
+AttributeError: 'taskId'

@@ -1,18 +1,106 @@
-2024-08-27 00:09:36|ERROR|app.py:48|'taskId'
+2024-08-29 13:56:24|ERROR|app.py:50|'NoneType' object has no attribute '__getitem__'
 Traceback (most recent call last):
-  File "/usr/local/lib/python3.10/dist-packages/web/utils.py", line 104, in __getattr__
-    return self[key]
-KeyError: 'taskId'
-
-During handling of the above exception, another exception occurred:
-
+  File "app.py", line 47, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 57, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 186, in GET
+    if result['code'] != 0:
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2024-08-29 14:19:43|ERROR|app.py:50|'date'
 Traceback (most recent call last):
-  File "app.py", line 45, in wrapper
+  File "app.py", line 47, in wrapper
     return func(*args,**kwargs)
-  File "app.py", line 55, in wrapper
+  File "app.py", line 57, in wrapper
     return func(*args,**kwargs)
-  File "app.py", line 163, in POST
-    taskId = int(req.taskid)
-  File "/usr/local/lib/python3.10/dist-packages/web/utils.py", line 106, in __getattr__
-    raise AttributeError(k)
-AttributeError: 'taskId'
+  File "app.py", line 185, in POST
+    print("Sign date {date}".format(date))
+KeyError: 'date'
+2024-08-29 14:19:57|ERROR|app.py:50|'date'
+Traceback (most recent call last):
+  File "app.py", line 47, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 57, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 185, in POST
+    print("Sign date {date}".format(date))
+KeyError: 'date'
+2024-08-29 14:20:47|ERROR|app.py:50|'date'
+Traceback (most recent call last):
+  File "app.py", line 47, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 57, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 185, in POST
+    print("Sign date {date}".format(date))
+KeyError: 'date'
+2024-08-29 14:21:12|ERROR|app.py:50|'date'
+Traceback (most recent call last):
+  File "app.py", line 47, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 57, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 186, in POST
+    result =Task.userSign(userId, signType, date)
+  File "./Task.py", line 180, in userSign
+    print("userSign date {date}".format(date))
+KeyError: 'date'
+2024-08-29 16:40:28|ERROR|app.py:50|int() argument must be a string or a number, not 'NoneType'
+Traceback (most recent call last):
+  File "app.py", line 47, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 57, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 168, in POST
+    result = Task.taskReward(userId, taskId)
+  File "./Task.py", line 152, in taskReward
+    if int(state) == TaskCfg.STATE_NOT_FINISH:
+TypeError: int() argument must be a string or a number, not 'NoneType'
+2024-08-29 16:40:40|ERROR|app.py:50|int() argument must be a string or a number, not 'NoneType'
+Traceback (most recent call last):
+  File "app.py", line 47, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 57, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 168, in POST
+    result = Task.taskReward(userId, taskId)
+  File "./Task.py", line 152, in taskReward
+    if int(state) == TaskCfg.STATE_NOT_FINISH:
+TypeError: int() argument must be a string or a number, not 'NoneType'
+2024-08-29 17:39:19|ERROR|app.py:50|cannot concatenate 'str' and 'int' objects
+Traceback (most recent call last):
+  File "app.py", line 47, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 57, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 186, in POST
+    result =Task.userSign(userId, signType, date)
+  File "./Task.py", line 200, in userSign
+    stateField = 'state_' + TaskCfg.ID_SIGN
+TypeError: cannot concatenate 'str' and 'int' objects
+2024-08-29 17:43:02|ERROR|app.py:50|time data '2024-08-29 17:43:02.716488' does not match format '%Y_%m_%d'
+Traceback (most recent call last):
+  File "app.py", line 47, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 57, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 186, in POST
+    result =Task.userSign(userId, signType, date)
+  File "./Task.py", line 189, in userSign
+    date = datetime.datetime.strptime(str(date), "%Y_%m_%d")
+  File "/usr/lib/python2.7/_strptime.py", line 332, in _strptime
+    (data_string, format))
+ValueError: time data '2024-08-29 17:43:02.716488' does not match format '%Y_%m_%d'
+2024-08-29 17:45:29|ERROR|app.py:50|time data '2024-08-29 17:45:29.511568' does not match format '%Y_%m_%d'
+Traceback (most recent call last):
+  File "app.py", line 47, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 57, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 186, in POST
+    result =Task.userSign(userId, signType, date)
+  File "./Task.py", line 189, in userSign
+    date = datetime.datetime.strptime(str(date), "%Y_%m_%d")
+  File "/usr/lib/python2.7/_strptime.py", line 332, in _strptime
+    (data_string, format))
+ValueError: time data '2024-08-29 17:45:29.511568' does not match format '%Y_%m_%d'

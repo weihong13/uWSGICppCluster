@@ -1,6 +1,7 @@
 
 import re
 
+print("hello world")
 
 def checkPassword(password):  
     # 字母、数字和可选字符!@#*?.+，至少一个数字和一个字母，8-16位  

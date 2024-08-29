@@ -1,4 +1,5 @@
 #-*- encoding:utf-8 -*-
+
 import web
 import Account
 import ErrorCfg
@@ -20,6 +21,7 @@ urls = (
     '/shop/buy','Shop_Buy',
     '/task/cfg','Task_Cfg',
     '/task/reward','Task_Reward',
+    '/sign','Sign',
 
 )
 
@@ -161,16 +163,31 @@ class Task_Reward:
         req = web.input(userid = '', taskid = '')
         userId = int(req.userid)
         taskId = int(req.taskid)
-        
+        print("Task_Reward taskId {}".format(taskId))
         # 领取奖励
         result = Task.taskReward(userId, taskId)
 
         if result['code'] != 0:
-            return Error.errResult(result['code'],result['reason'])
+            return Error.errResult(result['code'], result['reason'])
 
 
         return json.dumps({'code':0})
     
+# 签到
+class Sign:
+    @catchError
+    @checkhLogin
+    def POST(self):
+        req = web.input(userid = '', signtype = '', date = '')
+        userId = int(req.userid)
+        signType = int(req.signtype)
+        date = str(req.date)
+        print("Sign date {}".format(date))
+        result =Task.userSign(userId, signType, date)
+        if result['code'] != 0:
+            return Error.errResult(result['code'], result['reason'])
+
+        return json.dumps({'code':0})
 
 
 # if __name__ == '__main__':

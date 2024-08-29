@@ -1,7 +1,7 @@
 #-*- encoding:utf-8 -*-
 
 import web
-import redis # type: ignore
+import redis
 
 DB_HOST = 'localhost'
 DB_PORT = 3306
@@ -22,8 +22,8 @@ RDS_HOST = '127.0.0.1'
 RDS_PORT = 6379
 RDS_PW = '171223'
 
-SESSION_EXPIRETIME = 3000
-LOGIN_INVALID_TIME = 3000
+SESSION_EXPIRETIME = 300
+LOGIN_INVALID_TIME = 300
 
 
 grds = redis.Redis(
@@ -41,7 +41,7 @@ USER_STATUS_NOLMAL = 0
 USER_STATUS_FRERZE = 1
 
 
-# 账号
+# 账号的key
 KEY_PACKAGE = "KEY_PACKAGE_{userid}"
 
 KEY_LOGINE = "KEY_LOGINE_{userid}"
@@ -50,3 +50,6 @@ KEY_SHOP_CFG_INVENTORY = "KEY_SHOP_CFG_INVENTORY_{pid}"
 
 # 任务的key
 KEY_TASK = "KEY_TASK_{userid}_{date}"
+
+# 签到的key
+KEY_SIGN = "KEY_SIGN_{userid}_{date}"
