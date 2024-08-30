@@ -1,0 +1,41 @@
+2024-08-26 17:23:40|ERROR|app.py:46|'dict' object has no attribute 'has_key'
+Traceback (most recent call last):
+  File "app.py", line 43, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 53, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 149, in GET
+    taskCfg = Task.getTaskCfg(userId,version)
+  File "/home/weihong/backendFrame/webpy/./Task.py", line 78, in getTaskCfg
+    taskDict['count'] = taskInfo[countField] if taskInfo.has_key(countField) else 0
+AttributeError: 'dict' object has no attribute 'has_key'
+2024-08-26 17:26:06|ERROR|app.py:46|time data '2024_08_26' does not match format '%Y-%m-%d'
+Traceback (most recent call last):
+  File "app.py", line 43, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 53, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 149, in GET
+    taskCfg = Task.getTaskCfg(userId,version)
+  File "/home/weihong/backendFrame/webpy/./Task.py", line 67, in getTaskCfg
+    strDate = Lobby.getMonday(strDate)
+  File "/home/weihong/backendFrame/webpy/./Lobby.py", line 58, in getMonday
+    today = datetime.datetime.strptime(str(today),"%Y-%m-%d")
+  File "/usr/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/usr/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2024_08_26' does not match format '%Y-%m-%d'
+2024-08-26 17:26:44|ERROR|app.py:46|unsupported type for timedelta seconds component: str
+Traceback (most recent call last):
+  File "app.py", line 43, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 53, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 149, in GET
+    taskCfg = Task.getTaskCfg(userId,version)
+  File "/home/weihong/backendFrame/webpy/./Task.py", line 67, in getTaskCfg
+    strDate = Lobby.getMonday(strDate)
+  File "/home/weihong/backendFrame/webpy/./Lobby.py", line 59, in getMonday
+    return datetime.datetime.strftime(today - datetime.timedelta(today.weekday(), "%Y_%m_%d"))
+TypeError: unsupported type for timedelta seconds component: str

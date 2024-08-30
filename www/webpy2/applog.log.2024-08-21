@@ -1,0 +1,73 @@
+2024-08-20 18:51:41|ERROR|app.py:31|'cod'
+Traceback (most recent call last):
+  File "app.py", line 29, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 76, in POST
+    if result['cod'] != 0:
+KeyError: 'cod'
+2024-08-20 18:54:44|ERROR|app.py:31|'cod'
+Traceback (most recent call last):
+  File "app.py", line 29, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 76, in POST
+    if result['cod'] != 0:
+KeyError: 'cod'
+2024-08-20 18:57:33|ERROR|app.py:31|'cod'
+Traceback (most recent call last):
+  File "app.py", line 29, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 76, in POST
+    if result['cod'] != 0:
+KeyError: 'cod'
+2024-08-20 19:05:03|ERROR|app.py:31|'cod'
+Traceback (most recent call last):
+  File "app.py", line 29, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 76, in POST
+    if result['cod'] != 0:
+KeyError: 'cod'
+2024-08-20 23:16:58|ERROR|app.py:35|'<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "app.py", line 32, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 42, in shopBuy
+    if shopVersion < ShopCfg.SHOP_VERSION:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2024-08-20 23:17:54|ERROR|app.py:35|'<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "app.py", line 32, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 42, in shopBuy
+    if shopVersion < ShopCfg.SHOP_VERSION:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2024-08-20 23:18:19|ERROR|app.py:35|'<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "app.py", line 32, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 42, in shopBuy
+    if shopVersion < ShopCfg.SHOP_VERSION:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2024-08-20 23:20:13|ERROR|app.py:35|'<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "app.py", line 32, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 42, in shopBuy
+    if shopVersion < ShopCfg.SHOP_VERSION:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2024-08-20 23:24:24|ERROR|app.py:35|1001
+Traceback (most recent call last):
+  File "app.py", line 32, in wrapper
+    return func(*args,**kwargs)
+  File "app.py", line 108, in POST
+    buyInfo = Shop.shopBuy(userId, propId, buyNum, shopVersion, version)
+  File "/home/weihong/backendFrame/webpy/./Shop.py", line 53, in shopBuy
+    if version < cfg[propId]['version']:
+KeyError: 1001
