@@ -5,3 +5,14 @@ message Sign{
     optional int32 signtype = 2;
     optional string date = 3;
 }
+
+message Mail{
+    repeated int64 userid = 1;
+    optional int32 type = 2;
+    optional int64 fromuserid = 3;
+    optional string title = 4;
+    optional string context = 5;
+    optional string attach = 6;
+    optional string hasattach = 7;
+    optional string getattach = 8;
+}

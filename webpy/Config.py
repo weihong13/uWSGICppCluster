@@ -53,3 +53,7 @@ KEY_TASK = "KEY_TASK_{userid}_{date}"
 
 # 签到的key
 KEY_SIGN = "KEY_SIGN_{userid}_{date}"
+
+# 邮件的key
+KEY_MAIL_LIST = "KEY_MAIL_LIST_{userid}"
+KEY_MAIL_DETAIL = "KEY_MAIL_DETAIL_{mailid}"

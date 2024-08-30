@@ -10,6 +10,7 @@ import logging.config
 import Shop
 from RedisStore import RedisStore
 import Config
+import Mail
 
 import Task
 
@@ -22,7 +23,12 @@ urls = (
     '/task/cfg','Task_Cfg',
     '/task/reward','Task_Reward',
     '/sign','Sign',
-
+    '/mail/send','Mail_Send',
+    '/mail/list','Mail_List',
+    '/mail/detail','Mail_Detail',
+    '/mail/delete','Mail_Delete',
+    '/mail/getattach','Mail_GetAttach',
+    'mail/delete/all','Mail_Delete_All'
 )
 
 app = web.application(urls,globals())
@@ -189,7 +195,84 @@ class Sign:
 
         return json.dumps({'code':0})
 
+def Mail_Send():
+    @catchError
+    @checkhLogin
+    def POST(self):
+        req = web.input(useridlist = '', type = '', title = '', context = '', attach = '', fromuserid = '', isglobal = '')
+        # userId = int(req.useridlist)
+        # type = int(req.type)
+        # title = req.title
+        # context = req.context
+        req.attach = json.loads(req.attach)
+        # fromUserId = int(req.fromuserid)
+        # isglobal = req.isglobal
 
+        result = Mail.sendMail(req)
+        if result['code'] != 0:
+            return Error.errResult(result['code'], result['reason'])
+
+        return json.dumps({'code':0})
+
+def Mail_List():
+    @catchError
+    @checkhLogin
+    def GET(self):
+        req = web.input(userid = '')
+        userId = int(req.userid)
+        mailInfoList = Mail.getMailList(userId)
+        
+        return json.dumps({'code':0, 'mailInfoList':mailInfoList})
+
+def Mail_Detail():
+    @catchError
+    @checkhLogin
+    def GET(self):
+        req = web.input(userid = '')
+        userId = int(req.userid)
+        mailInfoList = Mail.getMailDetail(userId)
+        
+        return json.dumps({'code':0, 'mailInfoList':mailInfoList})
+
+
+
+def Mail_Delete():
+    @catchError
+    @checkhLogin
+    def POST(self):
+        req = web.input(userid = '', mailid = '')
+        userId = int(req.userid)
+        mailId = int(req.mailid)
+        result = Mail.deleteMail(userId, mailId)
+        if result['code'] != 0:
+            return Error.errResult(result['code'], result['reason'])
+
+        return json.dumps({'code':0})
+
+
+def Mail_GetAttach():
+    @catchError
+    @checkhLogin
+    def POST(self):
+        req = web.input(userid = '', mailid = '')
+        userId = int(req.userid)
+        mailId = int(req.mailid)
+        result = Mail.getMailAttach(userId, mailId)
+        if result['code'] != 0:
+            return Error.errResult(result['code'], result['reason'])
+
+        return json.dumps({'code':0,'attachList':result['attachList']})
+
+
+def Mail_Delete_All():
+    @catchError
+    @checkhLogin
+    def POST(self):
+        req = web.input(userid = '')
+        userId = int(req.userid)
+        Mail.deleteAllMail(userId)
+
+    return json.dumps({'code':0})
 # if __name__ == '__main__':
 #     # app.run()
     

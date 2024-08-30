@@ -58,3 +58,4 @@ def getMonday(today):
     today = datetime.datetime.strptime(str(today),"%Y_%m_%d")
     monday = today - datetime.timedelta(today.weekday())
     return datetime.datetime.strftime(monday, "%Y_%m_%d")
+
